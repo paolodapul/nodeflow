@@ -4,12 +4,13 @@
   "description": "Workflow orchestration for data engineering",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node index.ts"
+    "start": "conc \"tsc -w\" \"node --watch ./dist/index.js\""
   },
   "author": "Paolo Dapul",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.12.8",
+    "concurrently": "^8.2.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }
