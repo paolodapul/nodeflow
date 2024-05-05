@@ -1,5 +1,5 @@
 {
-  "name": "nodeflow",
+  "name": "@paolodapul/nodeflow",
   "version": "0.0.0",
   "description": "Workflow orchestration for data engineering",
   "main": "index.js",
