@@ -1,8 +1,11 @@
 import { DAG } from "./src/DAG";
-import { BashOperator } from "./src/operators/bashOperator/BashOperator";
 
-const dag1 = new DAG("downloadRocketLaunches", new Date(), "");
-console.log(dag1);
+const dag = new DAG<string>();
 
-const bash = new BashOperator("", "ls", dag1);
-bash.runCommand();
+const nodeA = dag.addNode("A");
+const nodeB = dag.addNode("B");
+const nodeC = dag.addNode("C");
+
+dag.addEdge(nodeA, nodeB);
+dag.addEdge(nodeB, nodeC);
+dag.addEdge(nodeC, nodeA); // throws an error due to cycle
